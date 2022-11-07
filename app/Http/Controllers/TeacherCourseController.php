@@ -66,7 +66,7 @@ class TeacherCourseController extends Controller
     }
 
     /**
-     * Display Teacher.
+     * Display TeacherCourse Info.
      *
      * @bodyParam teacher_course_Id integer required
      * @return \Illuminate\Http\Response
@@ -88,60 +88,5 @@ class TeacherCourseController extends Controller
         }
     }
 
-    /**
-     * Update teacher.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @bodyParam teacherId integer required
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $teacherId)
-    {
-       
-        try {
-            $data = $this->cmsService->updateTeacher(
-                $teacherId,
-                $request->all()
-            );
-            if ($data) {
-                return response()->json(
-                    ["sucess" => "successfully updated"],
-                    200
-                );
-            }
 
-            return response()->json(
-                ["error" => __("messages.un_processable_request")],
-                400
-            );
-        } catch (Exception $ex) {
-            return response()->json(["error" => $ex->getMessage()], 400);
-        }
-    }
-
-    /**
-     * delete teacher
-     *
-     * @bodyParam teacherId integer required
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($teacherId)
-    {
-        try {
-            $data = $this->cmsService->deleteTeacher($teacherId);
-            if ($data) {
-                return response()->json(
-                    ["sucess" => "successfully deleted"],
-                    200
-                );
-            }
-
-            return response()->json(
-                ["error" => __("messages.un_processable_request")],
-                400
-            );
-        } catch (Exception $ex) {
-            return response()->json(["error" => $ex->getMessage()], 400);
-        }
-    }
 }
