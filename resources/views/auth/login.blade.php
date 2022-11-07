@@ -64,7 +64,7 @@
               success: function(data) {
                   window.localStorage.setItem("auth_token", data.access_token);
                  
-                  $(location).attr('href', "customer")
+                  $(location).attr('href', "teacher")
                },
                error: function(request, status, error) {
                  err = JSON.parse(request.responseText);
