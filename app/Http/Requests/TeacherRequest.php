@@ -30,7 +30,7 @@ class TeacherRequest extends FormRequest
 
         $rules = [
             'fname' => 'required',
-            'fname' => 'required',
+            'lname' => 'required',
             'email' => 'required|unique:teachers',
             'phone'  => 'required'
           

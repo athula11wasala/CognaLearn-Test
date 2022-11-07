@@ -261,10 +261,10 @@ table.table .avatar {
 				</div>
 				<div class="modal-body">					
 					<div class="form-group">
-						<label>Teacher</label>
-						<input type="text" class="form-control" id="InputTeacher"  required>
+						<label>First Name</label>
+						<input type="text" class="form-control" id="Inputfname"  required>
 						<input type="hidden" id="InputHndId">
-                  <span id="errorteacher" class="text-danger"></span>
+                  <span id="errorfname" class="text-danger"></span>
 					</div>
 
 					<div class="form-group">

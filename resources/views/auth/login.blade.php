@@ -51,6 +51,11 @@
        $('#divlogout').hide();
        $('#divcustomer-add').hide();
        $('#divcustomer-list').hide();
+       $('#divcourse-list').hide();
+       $('#divcourse-add').hide();
+       $('#divteacher-list').hide();
+       $('#divteacher-add').hide();
+       $('#divteacher-add').hide();
      
    
    $('#btnlogin').click(function(e) {

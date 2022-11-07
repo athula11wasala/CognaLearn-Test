@@ -5,15 +5,15 @@
       <div class="row justify-content-center">
          <div class="col-md-8">
             <div class="card">
-               <div class="card-header">Add Course</div>
+               <div class="card-header">Add Teacher</div>
                <div class="card-body">
                   <form>
                      <div class="form-group row">
                         <div class="col-md-6 offset-md-4">
                         </div>
-                        <label for="name" class="col-md-4 col-form-label text-md-right">Teacher</label>
+                        <label for="name" class="col-md-4 col-form-label text-md-right">First Name</label>
                         <div class="col-md-6">
-                        <select  type="text"     id="Inputfname" class="form-control" required autofocus>
+                        <input  type="text"     id="Inputfname" class="form-control" required autofocus>
                            <span id="errorfname" class="text-danger"></span>
                         </div>
                      </div>
@@ -21,7 +21,7 @@
                      <div class="form-group row">
                         <div class="col-md-6 offset-md-4">
                         </div>
-                        <label for="name" class="col-md-4 col-form-label text-md-right">course</label>
+                        <label for="name" class="col-md-4 col-form-label text-md-right">Last Name</label>
                         <div class="col-md-6">
                            <input type="text"     id="Inputlname" class="form-control" required autofocus>
                            <span id="errorlname" class="text-danger"></span>

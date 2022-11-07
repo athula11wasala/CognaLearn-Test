@@ -74,50 +74,7 @@
                         <a class="nav-link" href="{{ route('login') }}">Login</a>
                     </li>
                   </div>
-
-
-                  <div id="divteacher-add">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('addTeacher') }}">Teacher Add</a>
-                    </li>
-
-                    
-                  </div>
-                  <div id="divteacher-list" >
-                    <li class="nav-item">
-                        <a class="nav-link"  href="{{ route('listTeacher') }}">Teacher List</a>
-                    </li>
-                  </div>
-
-                  <div id="divcourse-add">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('addCourse') }}">Course Add</a>
-                    </li>
-                    
-                  </div>
-                  <div id="divcourse-list" >
-                    <li class="nav-item">
-                        <a class="nav-link"  href="{{ route('listCourse') }}">Course List</a>
-                    </li>
-                  </div>
-
-                  
-                  <div id="divcustomer-add" >
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('addTeacherCourse') }}">Asssign Course</a>
-                    </li>
-
-                    
-                  </div>
-                  <div id="divcustomer-list" >
-                    <li class="nav-item">
-                        <a class="nav-link"  href="{{ route('listTeacherCourse') }}">Assign-Course List</a>
-                    </li>
-
-                    
-                  </div>
-
-                  
+ 
     
                   <div id="divRegister" >
 
@@ -125,17 +82,6 @@
                         <a class="nav-link" href="{{ route('register') }}">User Register</a>
                     </li>
                     </div>
-
-                  
-
-              
-              
-         <div id="divlogout" >
-                <li style="visibility: hidden;" class="nav-item">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
-                    </li>
-    </div>
               
             </ul>
   
