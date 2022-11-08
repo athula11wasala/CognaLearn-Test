@@ -237,7 +237,7 @@ table.table .avatar {
 						<h2>Manage <b>Assign Course</b></h2>
 					</div>
 					<div class="col-sm-6">
-						<a id="addCourse" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Teacher</span></a>
+						<a id="addCourse" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Assign course</span></a>
 								
 					</div>
         
@@ -304,7 +304,7 @@ table.table .avatar {
    populateList();
    
    $(document).on("click","#addCourse",function() {
-	$(location).attr('href', "http://127.0.0.1:83/teacher")
+	$(location).attr('href', "http://127.0.0.1:83/course/teacher")
 
    });
    $(document).on("click","#hypEdit",function() {
