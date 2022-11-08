@@ -27,7 +27,7 @@ class TeacherController extends Controller
         try {
             $data = $this->cmsService->listTeacher();
             if ($data) {
-                return response()->json(["data" => $data], 200);
+                return response()->json(["data" => $data], 201);
             }
 
             return response()->json(

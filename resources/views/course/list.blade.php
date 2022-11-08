@@ -313,7 +313,7 @@ table.table .avatar {
 
       clear();
       $.ajax({
-              url: "http://127.0.0.1:83/api/course/teacher/show/" + $(this).data("id"),
+              url: "http://127.0.0.1:83/api/course/show/" + $(this).data("id"),
               type: 'GET' ,
               headers: { Authorization: 'Bearer '+token},
               success: function(data) {
@@ -412,24 +412,25 @@ $(document).on("click","#hypdelete",function() {
    function populateList(){
       $("#customertbl").html('');
       $.ajax({
-              url: "http://127.0.0.1:83/api/teacher",
+              url: "http://127.0.0.1:83/api/course",
               type: 'GET' ,
               headers: { Authorization: 'Bearer '+token},
               success: function(data) {
                console.log(data.data);
 
-               html =    "<table class='table table-striped table-hover'><thead><tr>	<th>First Name</th><th>Last Name</th> <th>Email</th><th>Phone</th><th>Actions</th> </tr></thead><tbody>";
+               html =    "<table class='table table-striped table-hover'><thead><tr>	<th>Course</th><th>Course Code</th> <th>Description</th><th>Start Date</th><th>End Date</th><th>Actions</th> </tr></thead><tbody>";
                if((data.data)){
-                  teacherList =  data.data;
-                  for (let i = 0; i < teacherList.length; i++) { 
-                     console.log(teacherList[i].fname);
+                  courseList =  data.data;
+                  for (let i = 0; i < courseList.length; i++) { 
+                     console.log(courseList[i].fname);
                      html = html+ "<tr>"
-                     html = html+ "<td>" + teacherList[i].fname + "</td>" 
-                     html = html+ "<td>" + teacherList[i].lname + "</td>" 
-                     html = html+ "<td>" + teacherList[i].email + "</td>" 
-                     html = html+ "<td>" + teacherList[i].phone + "</td>" 
-                     html = html+ "<td><a href='#addEmployeeModal' id='hypEdit' data-id='" + teacherList[i].id + "' class='edit'  data-toggle='modal'><i class='material-icons' data-toggle='tooltip' title='Edit'>&#xE254;</i></a>"  
-                     html = html+ "<a href='#deleteEmployeeModal' id='hypdelete' data-id='" + teacherList[i].id + "' class='delete' data-toggle='modal'><i class='material-icons' data-toggle='tooltip' title='Delete'>&#xE872;</i></a> </td>" 
+                     html = html+ "<td>" + courseList[i].name + "</td>" 
+                     html = html+ "<td>" + courseList[i].course_code + "</td>" 
+                     html = html+ "<td>" + courseList[i].description + "</td>" 
+                     html = html+ "<td>" + courseList[i].start_date + "</td>" 
+					 html = html+ "<td>" + courseList[i].end_date + "</td>"
+                     html = html+ "<td><a href='#addEmployeeModal' id='hypEdit' data-id='" + courseList[i].id + "' class='edit'  data-toggle='modal'><i class='material-icons' data-toggle='tooltip' title='Edit'>&#xE254;</i></a>"  
+                     html = html+ "<a href='#deleteEmployeeModal' id='hypdelete' data-id='" + courseList[i].id + "' class='delete' data-toggle='modal'><i class='material-icons' data-toggle='tooltip' title='Delete'>&#xE872;</i></a> </td>" 
                      html = html+ "</tr>"
                   }
                }

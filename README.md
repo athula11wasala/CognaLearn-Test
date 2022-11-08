@@ -8,6 +8,8 @@ to execute from the command line,go to the application folder and run below comm
  php artisan migrate
  
  php artisan passport:install 
+
+ php artisan db:seed
  
  php artisan serve --port 83
 
