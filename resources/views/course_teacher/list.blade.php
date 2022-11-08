@@ -256,7 +256,7 @@ table.table .avatar {
 		<div class="modal-content">
 			<form>
 				<div class="modal-header">						
-					<h4 class="modal-title">Update Teacher</h4>
+					<h4 class="modal-title">Assign Course</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 				</div>
 				<div class="modal-body">					
