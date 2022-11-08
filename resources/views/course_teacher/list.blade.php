@@ -351,11 +351,11 @@ $(document).on("click","#hypdelete",function() {
               type: 'DELETE' ,
               headers: { Authorization: 'Bearer '+token},
               success: function(data) {
-               populateList();
+		       populateList();
                },
                error: function(request, status, error) {
                    err = JSON.parse(request.responseText);
-                 
+                
                },
 });
 });
