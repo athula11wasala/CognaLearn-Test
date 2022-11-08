@@ -349,7 +349,7 @@ $(document).on("click","#hypdelete",function() {
                },
                error: function(request, status, error) {
                    err = JSON.parse(request.responseText);
-                 
+                 alert( err.error);
                },
 });
 });

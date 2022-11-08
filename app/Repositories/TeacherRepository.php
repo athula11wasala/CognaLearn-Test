@@ -58,12 +58,22 @@ class TeacherRepository
      */
     public function deleteTeacher($teacherId)
     {
+        $data = ['flag'=>false,'message'=>''];
+
+        $isAssignTeacher = $this->getAssignCourseByTeacher($teacherId);
+        if(!empty( $isAssignTeacher )){ 
+          
+           return  ['flag'=>false,
+                     'message'=>'this teacher already assign to the course'];
+        }
         $teacher = Teacher::find($teacherId);
         if ($teacher) {
             return $teacher->delete();
         }
-        return false;
+        return $data; 
     }
+
+    
 
      /**
      * {@inheritDoc}
@@ -129,5 +139,15 @@ class TeacherRepository
         }
         return false;
     }
+
+     /**
+     * {@inheritDoc}
+     */
+    public function getAssignCourseByTeacher($teacherId)
+    {
+        return CourseTeacher::where('teacher_id',$teacherId)->first();
+        
+    }
+   
    
 }

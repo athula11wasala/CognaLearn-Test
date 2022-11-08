@@ -128,7 +128,8 @@ class TeacherController extends Controller
     {
         try {
             $data = $this->cmsService->deleteTeacher($teacherId);
-            if ($data) {
+          
+            if ($data['flag'] == true) {
                 return response()->json(
                     ["sucess" => "successfully deleted"],
                     200
@@ -136,7 +137,7 @@ class TeacherController extends Controller
             }
 
             return response()->json(
-                ["error" => __("messages.un_processable_request")],
+                ["error" =>$data['message']],
                 400
             );
         } catch (Exception $ex) {
