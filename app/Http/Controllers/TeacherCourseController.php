@@ -88,5 +88,31 @@ class TeacherCourseController extends Controller
         }
     }
 
+    /**
+     * delete assing course
+     *
+     * @bodyParam Id integer required
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        try {
+            $data = $this->cmsService->deleteAssignCourse($id);
+            if ($data) {
+                return response()->json(
+                    ["sucess" => "successfully deleted"],
+                    200
+                );
+            }
+
+            return response()->json(
+                ["error" => __("messages.un_processable_request")],
+                400
+            );
+        } catch (Exception $ex) {
+            return response()->json(["error" => $ex->getMessage()], 400);
+        }
+    }
+
 
 }

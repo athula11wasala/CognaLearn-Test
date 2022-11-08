@@ -116,5 +116,18 @@ class TeacherRepository
         }
         return $teacher->get();
     }
+
+
+    /**
+     * {@inheritDoc}
+     */
+    public function deleteAssignCourse($id)
+    {
+        $assignCourse = CourseTeacher::find($id);
+        if ($assignCourse) {
+            return $assignCourse->delete();
+        }
+        return false;
+    }
    
 }

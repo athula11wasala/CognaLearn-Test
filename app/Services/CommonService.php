@@ -162,6 +162,15 @@ class CommonService
         return $this->teacherRepository->listTeacherCourse($id);
     }
 
+    /**
+     * delete assign course by Id
+     */
+    public function deleteAssignCourse($id)
+    {
+        return $this->teacherRepository->deleteAssignCourse($id);
+    }
+
+
 
 
 }

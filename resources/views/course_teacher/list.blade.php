@@ -261,35 +261,40 @@ table.table .avatar {
 				</div>
 				<div class="modal-body">					
 					<div class="form-group">
-						<label>First  Name</label>
-						<input type="text" class="form-control" id="Inputfname"  required>
+						<label>Email</label>
+						<input type="text" class="form-control" id="Inputemail"  required>
 						<input type="hidden" id="InputHndId">
-                  <span id="errorfname" class="text-danger"></span>
+                  <span id="erroremail" class="text-danger"></span>
 					</div>
 
 					<div class="form-group">
-						<label>Last  Name</label>
-						<input type="text" class="form-control" id="Inputlname"  required>
-                  <span id="errorlname" class="text-danger"></span>
+						<label>Description</label>
+						<input type="text" class="form-control" id="InputDescription"  required>
+                  <span id="errorDescripton" class="text-danger"></span>
 					</div>
 
 					<div class="form-group">
-						<label>email</label>
-						<input type="email" class="form-control" id="InputEmail" required >
-                    <span id="erroremail" class="text-danger"></span>
-					</div>
-
-
-               <div class="form-group">
 						<label>Course Code</label>
-						<input type="text" class="form-control" id="Inputphone" required>
-                  <span id="errorphone" class="text-danger"></span>
+						<input type="text" class="form-control" id="InputCourseCode"  required>
+                  <span id="errorcoursecode" class="text-danger"></span>
+					</div>
+
+					<div class="form-group">
+						<label>Start Date</label>
+						<input type="text" class="form-control" id="InputstartDate"  required>
+                  <span id="errorstartDate" class="text-danger"></span>
+					</div>
+
+					<div class="form-group">
+						<label>end date</label>
+						<input type="text" class="form-control" id="Inputenddate"  required>
+                  <span id="errorenddate" class="text-danger"></span>
 					</div>
 										
 				</div>
 				<div class="modal-footer">
 					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-					<input type="button" id="btnUpdate" class="btn btn-success" value="update">
+				
 				</div>
 			</form>
 		</div>
@@ -312,17 +317,18 @@ table.table .avatar {
 
       clear();
       $.ajax({
-              url: "http://127.0.0.1:83/api/teacher/show/" + $(this).data("id"),
+              url: "http://127.0.0.1:83/api/course/teacher/show/" + $(this).data("id"),
               type: 'GET' ,
               headers: { Authorization: 'Bearer '+token},
               success: function(data) {
                console.log(data);
               console.log(data.data[0].name)
                $("#InputHndId").val(data.data[0].id);
-               $("#Inputfname").val(data.data[0].fname);
-               $("#Inputlname").val(data.data[0].lname);
-               $("#InputEmail").val(data.data[0].email);
-               $("#Inputphone").val(data.data[0].phone);
+               $("#Inputemail").val(data.data[0].email);
+               $("#InputDescription").val(data.data[0].description);
+               $("#InputstartDate").val(data.data[0].start_date);
+               $("#Inputenddate").val(data.data[0].end_date);
+			   $("#InputCourseCode").val(data.data[0].course_code);
 	           },
                error: function(request, status, error) {
                    err = JSON.parse(request.responseText);
@@ -341,7 +347,7 @@ $(document).on("click","#hypdelete",function() {
 
    clear();
       $.ajax({
-              url: "http://127.0.0.1:83/api/teacher/delete/" + $(this).data("id"),
+              url: "http://127.0.0.1:83/api/course/teacher/delete/" + $(this).data("id"),
               type: 'DELETE' ,
               headers: { Authorization: 'Bearer '+token},
               success: function(data) {
