@@ -71,7 +71,7 @@
               success: function(data) {
                clear(); 
                console.log(data);
-               window.location.href =  "http://127.0.0.1:83/course/list";
+               window.location.href =  "http://127.0.0.1:83/course/teacher/list";
                },
                error: function(request, status, error) { 
                      err = JSON.parse(request.responseText);
