@@ -29,5 +29,24 @@ class CourseTeacher extends Model
         }
         return true;                     
     }
+
+    public function assignTeacherCourse($data)
+    {  
+        return CourseTeacher::create($data);
+    }
+
+     /**
+     * {@inheritDoc}
+     */
+    public function deleteAssignTeachCourse($teacherId,$coureId)
+    {
+        $courseTeacher = CourseTeacher::where(['teacher_id'=>$teacherId,'course_id'=>$coureId])->first();
+       
+        if ($courseTeacher) {
+             $courseTeacher->delete();
+             return true;
+        }
+        return false;
+    }
                             
 }

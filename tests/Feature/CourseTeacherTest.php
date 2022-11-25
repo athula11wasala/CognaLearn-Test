@@ -80,8 +80,29 @@ class CourseTeacherTest extends TestCase
        $courseData = Course::factory()->create();
        $teacherData = Teacher::factory()->create();
 
+     
+      
        $data = (new CourseTeacher())->chkAlreadyAssignCourse($courseData->id, $teacherData->id);
        
+       $this->assertEquals(true, $data  );
+       
+    }
+
+    /**
+     * delete assign course
+     *
+     * @return void
+     */
+    public function test_delete_assign_course_teacher()
+    {  
+       $this->getAuthToken();
+
+       $courseData = Course::factory()->create();
+       $teacherData = Teacher::factory()->create();
+       (new CourseTeacher())->assignTeacherCourse(['course_id'=>$courseData->id,'teacher_id'=>$teacherData->id]);
+
+       $data = (new CourseTeacher())->deleteAssignTeachCourse($teacherData->id,$courseData->id);
+
        $this->assertEquals(true, $data  );
        
     }
